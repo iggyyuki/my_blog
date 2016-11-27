@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = post.find(@params[:id])
+    @post = Post.find(params[:id])
   end
 
   def new
@@ -18,9 +18,13 @@ class PostsController < ApplicationController
   end
 
   def edit
+    @post = Post.find(params[:id])
   end
 
   def update
+    @post = Post.find(params[:id])
+    @post = update(post_params)
+    redirect_to "/posts/#{@post.id}"
   end
 
   def destroy
