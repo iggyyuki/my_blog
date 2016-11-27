@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
   def index
+    @Posts = Post.all
+    @new_posts = Post.all
   end
 
   def show
