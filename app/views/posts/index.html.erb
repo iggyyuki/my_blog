@@ -1,2 +1,17 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<div class="col-md-8">
+    <% @posts.each do |post| %>
+        <div class="article">
+            <h2>タイトル: <%= post.title %></h2>
+            <p>カテゴリ: <%=post.category %></p>
+            <p>作成日：<%= post.created_at %></p>
+            <p><%= truncate(post.body, length: 50) %></p>
+            <p><%= link_to "続きを読む", post, class: "btn btn-default" %></p>
+        </div>
+    <% end %>
+</div>
+
+<div class="col-md-4">
+    <div class="thumnail">
+        
+    </div>
+</div>
