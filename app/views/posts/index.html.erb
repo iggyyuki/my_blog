@@ -20,10 +20,6 @@
     </div>
     <div class="list-group">
         <% @new_posts.each_with_index do | post, index| %>
-        <% if index >= 5
-            break
-        end
-        %>
         <%= link_to post.title, post, class: "list-group-item" %>
         <% end %>
     </div>
